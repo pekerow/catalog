@@ -7,7 +7,7 @@ This is the production version of the code from [Item Catalog](https://github.co
 
 * In the files ``__init.py__``, ``catalog_setup.py`` and ``music.py``, ``engine = create_engine('sqlite:///musiccatalog.db')`` is changed to ``engine = create_engine('postgresql://catalog:catalog@localhost/catalog')``to replace SQLite with Postgresql. 
 
-* The ``catalog_setup.pyc`` and ``music.db`` files used by SQLLite have been deleted.
+* The ``catalog_setup.pyc`` and ``music.db`` files used by SQLite have been deleted.
 
 * The line ``h = httplib2.Http(".cache")`` is changed to ``h = httplib2.Http()`` because the argument ``.cache`` is optional. Its purpose is to enable a log, but this has been made redundant by the error log and access log files enabled in the ``catalog.conf`` file, which is used by Apache to serve the app.
 
